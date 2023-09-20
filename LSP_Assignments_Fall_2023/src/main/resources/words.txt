@@ -1,1 +1,1 @@
-Design25 and code a program that reads a text file, and counts the number of times each word that it contains appears!!! 100
+This assignment gives you some experience with, and insight into, how some of the ideas covered in this course apply in more “real-world” settings. In particular, this exercise gives you a problem to solve, but leaves you to use your own judgement about the algorithms or data structures to use — much as a professional software developer relies on their own judgement. 
