@@ -71,7 +71,8 @@ public class IntegerSet {
 	}
 	
 	public void remove(int item) {
-		set.remove(item);
+		Integer temp = item;
+		set.remove(temp);
 	}
 	
 	public void union(IntegerSet intSetB) {
