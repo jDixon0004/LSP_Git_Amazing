@@ -77,7 +77,9 @@ public class IntegerSet {
 	public void union(IntegerSet intSetB) {
 		try {
 			while(intSetB.length() > 0) {
-				set.add(intSetB.smallest());
+				Integer temp = intSetB.smallest();
+				set.add(temp);
+				intSetB.remove(temp);
 			}
 		} catch(IntegerSetException e) {
 			return;
@@ -92,6 +94,7 @@ public class IntegerSet {
 				temp = intSetB.smallest();
 				if(set.contains(temp))
 					newSet.add(temp);
+				intSetB.remove(temp);
 			}
 			set = newSet;
 		} catch(IntegerSetException e) {
@@ -103,7 +106,9 @@ public class IntegerSet {
 	public void diff(IntegerSet intSetB) {
 		try {
 			while(intSetB.length() > 0) {
-				set.remove(intSetB.smallest());
+				Integer temp = intSetB.smallest();
+				set.remove(temp);
+				intSetB.remove(temp);
 			}
 		} catch(IntegerSetException e) {
 			return;
@@ -118,6 +123,7 @@ public class IntegerSet {
 				temp = intSetB.smallest();
 				if(!set.contains(temp))
 					newSet.add(temp);
+				intSetB.remove(temp);
 			}
 			set = newSet;
 		} catch(IntegerSetException e) {
