@@ -2,7 +2,6 @@ package org.howard.edu.lsp.assignment3;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.howard.edu.lsp.assignment3.IntegerSetException;
 
 public class IntegerSet {
 	private List<Integer> set = new ArrayList<Integer>();
