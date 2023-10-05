@@ -69,6 +69,7 @@ public class IntegerSet {
 		return smallest;
 	}
 	
+	
 	public void add(int item) {
 		if(!contains(item)) {
 			set.add(item);
@@ -96,7 +97,7 @@ public class IntegerSet {
 		
 		while(it.hasNext()) {
 			temp = it.next();
-			if(set.contains(temp))
+			if(set.contains(temp) && !newSet.contains(temp))
 				newSet.add(temp);
 		}
 		set = newSet;
@@ -117,7 +118,7 @@ public class IntegerSet {
 		Iterator<Integer> it = intSetB.iterator();
 		while(it.hasNext()) {
 			temp = it.next();
-			if(!set.contains(temp))
+			if(!set.contains(temp) && !newSet.contains(temp))
 				newSet.add(temp);
 		}
 		set = newSet;
