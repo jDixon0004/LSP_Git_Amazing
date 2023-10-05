@@ -1,6 +1,7 @@
 package org.howard.edu.lsp.assignment3;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class IntegerSet {
@@ -76,61 +77,45 @@ public class IntegerSet {
 	}
 	
 	public void union(IntegerSet intSetB) {
-		try {
-			while(intSetB.length() > 0) {
-				Integer temp = intSetB.smallest();
-				set.add(temp);
-				intSetB.remove(temp);
-			}
-		} catch(IntegerSetException e) {
-			return;
+		Integer temp;
+		Iterator<Integer> it = intSetB.iterator();
+		while(it.hasNext()) {
+			temp = it.next();
+			set.add(temp);
 		}
 	}
 	
 	public void intersect(IntegerSet intSetB) {
 		List<Integer> newSet = new ArrayList<Integer>();
 		Integer temp;
-		try {
-			while(intSetB.length() > 0) {
-				temp = intSetB.smallest();
-				if(set.contains(temp))
-					newSet.add(temp);
-				intSetB.remove(temp);
-			}
-			set = newSet;
-		} catch(IntegerSetException e) {
-			set = newSet;
-			return;
+		Iterator<Integer> it = intSetB.iterator();
+		
+		while(it.hasNext()) {
+			temp = it.next();
+			if(set.contains(temp))
+				newSet.add(temp);
 		}
 	}
 	
 	public void diff(IntegerSet intSetB) {
-		try {
-			while(intSetB.length() > 0) {
-				Integer temp = intSetB.smallest();
-				set.remove(temp);
-				intSetB.remove(temp);
-			}
-		} catch(IntegerSetException e) {
-			return;
+		Integer temp;
+		Iterator<Integer> it = intSetB.iterator();
+		while(it.hasNext()) {
+			temp = it.next();
+			set.remove(temp);
 		}
 	}
 	
 	public void complement(IntegerSet intSetB) {
 		List<Integer> newSet = new ArrayList<Integer>();
 		Integer temp;
-		try {
-			while(intSetB.length() > 0) {
-				temp = intSetB.smallest();
-				if(!set.contains(temp))
-					newSet.add(temp);
-				intSetB.remove(temp);
-			}
-			set = newSet;
-		} catch(IntegerSetException e) {
-			set = newSet;
-			return;
+		Iterator<Integer> it = intSetB.iterator();
+		while(it.hasNext()) {
+			temp = it.next();
+			if(!set.contains(temp))
+				newSet.add(temp);
 		}
+		set = newSet;
 	}
 	
 	boolean isEmpty() {
@@ -150,5 +135,9 @@ public class IntegerSet {
 		s = s + "}";
 		return s;
 		
+	}
+	
+	public Iterator<Integer> iterator() {
+		return set.iterator();
 	}
 }
