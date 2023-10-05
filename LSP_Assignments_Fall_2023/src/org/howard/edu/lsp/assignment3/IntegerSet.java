@@ -24,6 +24,10 @@ public class IntegerSet {
 	public boolean equals(Object o) {
 		if(o instanceof IntegerSet) {
 			IntegerSet b = (IntegerSet)o;
+			
+			if(b.length() != this.length())
+				return false;
+			
 			for(int i=0; i<set.size(); i++) {
 				if(!(b.contains(set.get(i)))) {
 					return false;
