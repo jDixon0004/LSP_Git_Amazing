@@ -95,6 +95,7 @@ public class IntegerSet {
 			if(set.contains(temp))
 				newSet.add(temp);
 		}
+		set = newSet;
 	}
 	
 	public void diff(IntegerSet intSetB) {
