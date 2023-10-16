@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * An implementation of the a set data structure containing only int elements stored as {@link java.lang.Integer} objects.
+ * <p>
+ * Implements the set union, intersect, difference, and complement operations, as well as other utility methods such as add, remove, 
+ * clear, toString, etc.
+ * @author Jaelen Dixon
+ */
 public class IntegerSet {
 	private List<Integer> set = new ArrayList<Integer>();
 	
@@ -13,9 +20,11 @@ public class IntegerSet {
 	public IntegerSet() {}
 	
 	/**
-	 * Constructs an IntegerSet containing the elements of the specified ArrayList. Duplicate elements found in the specified
-	 * ArrayList will not be added to this IntegerSet (such that only one of the duplicate elements is stored in the IntegerSet).
-	 * @param set - the ArrayList whose elements are placed into this list.
+	 * Constructs an IntegerSet containing the elements of the specified ArrayList. 
+	 * <p>
+	 * Duplicate elements found in the specified ArrayList will not be added to this IntegerSet (such that only one of the 
+	 * duplicate elements is stored in the IntegerSet).
+	 * @param set the ArrayList whose elements are placed into this list.
 	 */
 	public IntegerSet(ArrayList<Integer> set) {
 		Iterator<Integer> it = set.iterator();
@@ -41,9 +50,10 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Compares the specified object with this IntegerSet for equality. Returns true if the specified object 
-	 * is an IntegerSet and if this IntegerSet and the specified IntegerSet have the same elements.
-	 * @param o - an object to be compared to this IntegerSet
+	 * Compares the specified object with this IntegerSet for equality. 
+	 * <p>
+	 * Returns true if the specified object is an IntegerSet and if this IntegerSet and the specified IntegerSet have the same elements.
+	 * @param o an object to be compared to this IntegerSet
 	 * @return true if the given object equals this IntegerSet
 	 */
 	public boolean equals(Object o) {
@@ -65,10 +75,11 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Returns true if this IntegerSet contains the specified element. More formally, returns true if and 
-	 * only if this list contains exactly one element e such that
+	 * Returns true if this IntegerSet contains the specified element.
+	 * <p>
+	 * More formally, returns true if and only if this list contains exactly one element e such that
 	 * (o==null ? e==null : o.equals(e)).
-	 * @param value - the int value whose presence in this IntegerSet is to be tested.
+	 * @param value the int value whose presence in this IntegerSet is to be tested.
 	 * @return true if this list contains the specified element
 	 */
 	public boolean contains(int value) {
@@ -116,7 +127,7 @@ public class IntegerSet {
 	 * <p>
 	 * If the given int is already in IntegerSet, this function does nothing.
 	 * 
-	 * @param item - an int to be added to this IntegerSet
+	 * @param item an int to be added to this IntegerSet
 	 */
 	public void add(int item) {
 		if(!contains(item)) {
@@ -129,7 +140,7 @@ public class IntegerSet {
 	 * <p>
 	 * If the given int is not in IntegerSet, this function does nothing.
 	 * 
-	 * @param item - an int to be removed from this IntegerSet
+	 * @param item an int to be removed from this IntegerSet
 	 */
 	public void remove(int item) {
 		Integer temp = item;
@@ -137,8 +148,10 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Performs a set union operation on this IntegerSet and the passed IntegerSet intSetB, setting the new value of this IntegerSet to be the result of the union operation.
-	 * @param intSetB - the second IntegerSet to be used in the union operation
+	 * Performs a set union operation on this IntegerSet and the passed IntegerSet intSetB.
+	 * <p>
+	 * Sets the new value of this IntegerSet to be the result of the union operation.
+	 * @param intSetB the second IntegerSet to be used in the union operation
 	 */
 	public void union(IntegerSet intSetB) {
 		Integer temp;
@@ -150,8 +163,10 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Performs a set intersect operation on this IntegerSet and the passed IntegerSet intSetB, setting the new value of this IntegerSet to be the result of the intersect operation.
-	 * @param intSetB - the second IntegerSet to be used in the intersect operation
+	 * Performs a set intersect operation on this IntegerSet and the passed IntegerSet intSetB.
+	 * <p>
+	 * Sets the new value of this IntegerSet to be the result of the intersect operation.
+	 * @param intSetB the second IntegerSet to be used in the intersect operation
 	 */
 	public void intersect(IntegerSet intSetB) {
 		List<Integer> newSet = new ArrayList<Integer>();
@@ -167,8 +182,10 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Performs a set difference operation on this IntegerSet and the passed IntegerSet intSetB, setting the new value of this IntegerSet to be the result of the difference operation.
-	 * @param intSetB - the second IntegerSet to be used in the difference operation
+	 * Performs a set difference operation on this IntegerSet and the passed IntegerSet intSetB.
+	 * <p>
+	 * Sets the new value of this IntegerSet to be the result of the difference operation.
+	 * @param intSetB the second IntegerSet to be used in the difference operation
 	 */
 	public void diff(IntegerSet intSetB) {
 		Integer temp;
@@ -180,8 +197,10 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Performs a set complement operation this IntegerSet and the passed IntegerSet intSetB, setting the new value of this IntegerSet to be the result of the complement operation.
-	 * @param intSetB - the second IntegerSet to be used in the complement operation
+	 * Performs a set complement operation this IntegerSet and the passed IntegerSet intSetB.
+	 * <p>
+	 * Sets the new value of this IntegerSet to be the result of the complement operation.
+	 * @param intSetB the second IntegerSet to be used in the complement operation
 	 */
 	public void complement(IntegerSet intSetB) {
 		List<Integer> newSet = new ArrayList<Integer>();
@@ -204,7 +223,9 @@ public class IntegerSet {
 	}
 	
 	/**
-	 * Returns a string representation of this collection. The string representation consists of a list of the 
+	 * Returns a string representation of this collection.
+	 * <p>
+	 * The string representation consists of a list of the 
 	 * collection's elements in the order they are returned by its iterator, enclosed in curly braces ("{}"). Adjacent 
 	 * elements are separated by the character ", " (comma and space). Elements are converted to strings as by
 	 * Integer.toString().
