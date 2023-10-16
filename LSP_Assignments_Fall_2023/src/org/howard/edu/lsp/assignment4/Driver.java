@@ -4,6 +4,10 @@ public class Driver {
 	public static void main(String[] args) {
 		try {
 			IntegerSet set1 = new IntegerSet();
+			System.out.println("Value of Set1 is: " + set1.toString());
+			
+			System.out.println("\nAdding 1, 1, 2, and 3 to Set1..." + set1.toString());
+			set1.add(1);
 			set1.add(1);
 			set1.add(2);
 			set1.add(3);
@@ -14,6 +18,9 @@ public class Driver {
 			System.out.println("Largest Value in Set1 is: " + set1.largest());
 			
 			IntegerSet set2 = new IntegerSet();
+			System.out.println("\nValue of Set2 is: " + set2.toString());
+			
+			System.out.println("\nAdding 1, 1, 2, and 3 to Set2..." + set1.toString());
 			set2.add(4);
 			set2.add(5);
 			
@@ -38,6 +45,7 @@ public class Driver {
 			System.out.println("Result of complement of Set1 and Set 2");
 			System.out.println(set1.toString());
 			
+			System.out.println("\nAdding 1, 2, and 3 to Set1..." + set1.toString());
 			set1.add(1);
 			set1.add(2);
 			set1.add(3);
@@ -48,6 +56,7 @@ public class Driver {
 			System.out.println("Value of Set2 is: " + set2.toString());
 			System.out.println("Value of Set2.isEmpty(): " + set2.isEmpty());
 			
+			System.out.println("\nAdding 1, 2, 4, 7, 8, and 9 to Set2..." + set1.toString());
 			set2.add(1);
 			set2.add(2);
 			set2.add(4);
@@ -72,10 +81,12 @@ public class Driver {
 			System.out.println("Value of Set2 is: " + set2.toString());
 			System.out.println("Value of Set1.equals(Set2): " + set1.equals(set2));
 			
+			System.out.println("\nAdding 1, 2, and 3 to Set1..." + set1.toString());
 			set1.add(1);
 			set1.add(2);
 			set1.add(3);
 			
+			System.out.println("\nAdding 1, 2, and 3 to Set2..." + set1.toString());
 			set2.add(1);
 			set2.add(2);
 			set2.add(3);
