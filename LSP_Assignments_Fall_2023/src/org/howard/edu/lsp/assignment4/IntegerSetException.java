@@ -1,5 +1,11 @@
 package org.howard.edu.lsp.assignment4;
 
+/**
+ * Thrown when an exception condition results from an implementation of the IntegerSet class. For example, if an "Empty set" is found 
+ * in certain operations, this exception is thrown.
+ * 
+ * @author Jaelen Dixon
+ */
 public class IntegerSetException extends Exception {
 	
 	/**
