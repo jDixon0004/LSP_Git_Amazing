@@ -12,10 +12,20 @@ public class Book {
 	}
 	
 	public String toString() {
-		
+		return title + " | " + author + " | " + Integer.toString(year);
 	}
 	
 	public boolean equals(Object o) {
+		if(o instanceof Book) {
+			Book otherBook = (Book)o;
+			
+			if(this.title.equals(otherBook.title) && 
+					this.author.equals(otherBook.author) && 
+					this.year == otherBook.year) {
+				return true;
+			}
+		}
 		
+		return false;
 	}
 }
