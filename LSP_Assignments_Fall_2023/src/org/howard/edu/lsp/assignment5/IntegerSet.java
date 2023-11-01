@@ -158,7 +158,7 @@ public class IntegerSet {
 		Iterator<Integer> it = intSetB.iterator();
 		while(it.hasNext()) {
 			temp = it.next();
-			set.add(temp);
+			add(temp);
 		}
 	}
 	
@@ -192,7 +192,7 @@ public class IntegerSet {
 		Iterator<Integer> it = intSetB.iterator();
 		while(it.hasNext()) {
 			temp = it.next();
-			set.remove(temp);
+			remove(temp);
 		}
 	}
 	
