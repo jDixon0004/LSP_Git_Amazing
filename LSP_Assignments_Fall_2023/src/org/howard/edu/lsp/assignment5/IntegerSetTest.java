@@ -144,7 +144,7 @@ public class IntegerSetTest {
 		// Test adding non-duplicate
 		int length = set1.length();
 		Integer[] temp = {2,4,6,8,10,12,14,16,18,20,22};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		set1.add(22);
@@ -165,7 +165,7 @@ public class IntegerSetTest {
 	public void testRemove() {
 		int length = set1.length();
 		Integer[] temp = {4,6,8,10,12,14,16,18,20};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		// Test removing item contained in set
@@ -186,7 +186,7 @@ public class IntegerSetTest {
 	@DisplayName("Test case for union")
 	public void testUnion() {
 		Integer[] temp = {2,3,4,6,8,9,10,12,14,15,16,18,20};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		// Test with two populated sets
@@ -194,7 +194,7 @@ public class IntegerSetTest {
 		assertEquals(set1.equals(expected), true);
 		
 		Integer[] temp2 = {21,22};
-		ArrayList<Integer> tempList2 = new ArrayList(Arrays.asList(temp2));
+		ArrayList<Integer> tempList2 = new ArrayList<Integer>(Arrays.asList(temp2));
 		IntegerSet expected2 = new IntegerSet(tempList2);
 		
 		// Test with empty set
@@ -206,7 +206,7 @@ public class IntegerSetTest {
 	@DisplayName("Test case for intersect")
 	public void testIntersect() {
 		Integer[] temp = {6,12,18};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		// Test with two populated sets
@@ -224,7 +224,7 @@ public class IntegerSetTest {
 	@DisplayName("Test case for diff")
 	public void testDiff() {
 		Integer[] temp = {2,4,8,10,14,16,20};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		// Test with two populated sets
@@ -232,7 +232,7 @@ public class IntegerSetTest {
 		assertEquals(set1.equals(expected), true);
 		
 		Integer[] temp2 = {21,22};
-		ArrayList<Integer> tempList2 = new ArrayList(Arrays.asList(temp2));
+		ArrayList<Integer> tempList2 = new ArrayList<Integer>(Arrays.asList(temp2));
 		IntegerSet expected2 = new IntegerSet(tempList2);
 		
 		// Test with empty set
@@ -245,7 +245,7 @@ public class IntegerSetTest {
 	@DisplayName("Test case for complement")
 	public void testComplement() {
 		Integer[] temp = {3,9,15};
-		ArrayList<Integer> tempList = new ArrayList(Arrays.asList(temp));
+		ArrayList<Integer> tempList = new ArrayList<Integer>(Arrays.asList(temp));
 		IntegerSet expected = new IntegerSet(tempList);
 		
 		// Test with two populated sets
