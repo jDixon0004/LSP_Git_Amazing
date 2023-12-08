@@ -22,7 +22,8 @@ public class TestLogger {
 	@Test
 	@DisplayName("Test case for displayLog")
 	public void testDisplayLog() {
-		
+		logger.logMessage("Hello World!");
+		assertequals(logger.displayLog(), ("Log:\n" + "Hello World!\n"));
 	}
 	
 	@Test
