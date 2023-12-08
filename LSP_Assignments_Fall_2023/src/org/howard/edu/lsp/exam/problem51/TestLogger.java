@@ -1,11 +1,6 @@
 package org.howard.edu.lsp.exam.problem51;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -23,13 +18,13 @@ public class TestLogger {
 	@DisplayName("Test case for displayLog")
 	public void testDisplayLog() {
 		logger.logMessage("Hello World!");
-		assertequals(logger.displayLog(), ("Log:\n" + "Hello World!\n"));
+		assertEquals(logger.displayLog(), ("Log:\n" + "Hello World!\n"));
 	}
 	
 	@Test
 	@DisplayName("Test case for loggerInstances")
 	public void testLoggerInstances() {
 		Logger logger2 = Logger.getInstance();
-		assertequals(logger, logger2);
+		assertEquals(logger, logger2);
 	}
 }
